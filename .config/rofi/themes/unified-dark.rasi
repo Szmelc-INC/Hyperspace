@@ -1,0 +1,58 @@
+* {
+    background:   #181926ee;
+    background-alt: #222233ff;
+    foreground:   #cdd6f4ff;
+    border-color: #45475aff;
+    selected-background: #7aa2f7dd;
+    selected-foreground: #181926ff;
+    separatorcolor: #45475aff;
+    highlight:    #7aa2f7ff;
+    accent:       #7aa2f7ff;
+    font: "JetBrainsMono Nerd Font 16";
+    border-radius: 10px;
+    border:        2px;
+    padding:       10px;
+}
+window {
+    background-color: @background;
+    border:          @border;
+    border-radius:   @border-radius;
+    padding:         @padding;
+}
+mainbox {
+    background-color: @background;
+    border-radius:    @border-radius;
+    padding:          12px;
+}
+entry, inputbar {
+    background-color: @background-alt;
+    color:            @foreground;
+    border-radius:    7px;
+    border:           1px solid @border-color;
+    margin:           0 0 10px 0;
+    padding:          8px;
+}
+listview {
+    background-color: @background;
+    border-radius:    @border-radius;
+    spacing:          6px;
+}
+element {
+    background-color: transparent;
+    color:            @foreground;
+    border-radius:    7px;
+    padding:          6px 10px;
+}
+element selected {
+    background-color: @selected-background;
+    color:            @selected-foreground;
+    border-radius:    7px;
+}
+element-icon {
+    size:             1.3em;
+    margin:           0 9px 0 0;
+}
+scrollbar {
+    width:            5px;
+    color:            @accent;
+}

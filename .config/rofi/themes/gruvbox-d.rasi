@@ -1,0 +1,63 @@
+* {
+    background-color: transparent;
+    font: "JetBrainsMono Nerd Font 14";
+    color: #20FC8F;
+}
+
+window, mainbox, listview {
+    background-color: #282828;
+    color: #282828;
+}
+
+window {
+    border: 5;
+    padding: 5;
+}
+
+mainbox {
+    padding: 5;
+}
+
+listview {
+    color: #282828;
+}
+
+entry, inputbar {
+    background-color: #3c3836;
+    color: #ebdbb2;
+    border-radius: 5;
+    border: 5;
+    margin: 0 0 8 0;
+    padding: 1;
+}
+
+element, element-icon {
+    color: #ebdbb2;
+}
+
+element {
+    background-color: transparent;
+    border-radius: 7;
+    padding: 1 5;
+}
+
+element selected {
+    background-color: #123333;
+    color: #123333;
+    border-radius: 5;
+}
+
+element-icon {
+    size: 1.2em;
+    margin: 0 8 0 0;
+}
+
+message {
+    color: #ebdbb2;
+    background-color: #123333;
+}
+
+scrollbar {
+    size: 5;
+    color: #123333;
+}
