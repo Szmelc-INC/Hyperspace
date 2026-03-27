@@ -1,0 +1,55 @@
+[global]
+    font = JetBrainsMono Nerd Font 14
+    markup = full
+    format = "<b>%s</b>\n%b"
+    sort = yes
+    word_wrap = yes
+    alignment = left
+    width = 400
+    offset = 20x40
+    origin = top-right
+    transparency = 24                # ~rgba(30,30,46,0.96)
+    corner_radius = 5
+    frame_width = 2
+    frame_color = "#313244"          # @border
+    separator_color = frame
+    padding = 6                      # window/mainbox padding
+    horizontal_padding = 8
+    gap_size = 4                     # listview spacing
+    separator_height = 2
+    idle_threshold = 120
+    sticky_history = yes
+    history_length = 20
+    show_indicators = yes
+    icon_position = left
+    min_icon_size = 36
+    max_icon_size = 56
+    icon_theme = Papirus
+    show_age_threshold = 60
+
+[urgency_low]
+    background = "#232339"           # entry/inputbar @bg-alt
+    foreground = "#ffffff"           # @fg
+    frame_color = "#313244"          # @border
+    timeout = 4
+
+[urgency_normal]
+    background = "#1e1e2e"           # main window @bg
+    foreground = "#ffffff"           # @fg
+    frame_color = "#7aa2f7"          # @accent
+    timeout = 7
+
+[urgency_critical]
+    background = "#f38ba8"           # @alert
+    foreground = "#1e1e2e"           # dark text for alert bg
+    frame_color = "#f38ba8"          # @alert
+    timeout = 0
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+period
+
+[misc]
+    force_xwayland = false
