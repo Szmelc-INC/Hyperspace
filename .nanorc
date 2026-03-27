@@ -1,0 +1,20 @@
+set linenumbers
+set tabsize 4
+set tabstospaces
+set softwrap
+set mouse
+include "/usr/share/nano/*.nanorc"
+# set positioning
+set linenumbers
+set tabsize 4
+set tabstospaces
+set softwrap
+set mouse
+set smarthome
+set autoindent
+set positionlog
+set constantshow
+set indicator
+set backup
+set multibuffer
+set historylog
