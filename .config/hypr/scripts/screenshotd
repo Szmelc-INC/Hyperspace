@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# 5s delayed screenshot
+set -e
+
+delay=5
+outfile="/tmp/scrd.png"
+
+geo=$(slurp) || exit 1
+
+sleep "$delay"
+
+if grim -g "$geo" - | tee "$outfile" | wl-copy --type image/png >/dev/null 2>&1; then
+  if command -v notify-send >/dev/null 2>&1; then
+    notify-send "Screenshot captured" "Saved to $outfile and copied to clipboard"
+  fi
+fi
