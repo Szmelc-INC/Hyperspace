@@ -1,0 +1,75 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/spotify",
+    "tray",
+    "wireplumber",
+    "bluetooth",
+    "network",
+    "custom/cpumem",
+    "battery",
+    "custom/power"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "active-only": false,
+    "tooltip": false
+  },
+
+  "clock": {
+    "on-click": "rofi -show drun",
+    "format": "{:%H:%M}",
+    "tooltip-format": "<big>{:%A, %d %B %Y}</big>"
+  },
+
+  "custom/spotify": {
+    "exec": "pgrep -x spotify >/dev/null && playerctl -p spotify metadata --format '{\"text\": \"\", \"tooltip\": \"Now playing: {{artist}} - {{title}}\"}' || echo ''",
+    "return-type": "json",
+    "interval": 3,
+    "on-click": "hyprctl dispatch focuswindow class:Spotify"
+  },
+
+  "wireplumber": {
+    "format": " {volume}%",
+    "format-muted": " Muted",
+    "tooltip-format": "{node_name}",
+    "on-click": "pwvucontrol"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " On",
+    "format-disabled": " Off",
+    "tooltip-format": "{controller_alias}\nConnected to: {device_alias}",
+    "on-click": "blueman-manager"
+  },
+
+  "network": {
+    "format-wifi": " Wi-Fi",
+    "format-ethernet": "󰈀 Wired",
+    "format-disconnected": "󰤮 Disconnected",
+    "tooltip-format": "{ifname} connected to {essid}\nIP:{ipaddr}"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": "Power menu",
+    "on-click": "~/.config/waybar/power_menu.sh"
+  },
+
+  "custom/cpumem": {
+    "format": "{}",
+    "return-type": "json",
+    "interval": 5,
+    "exec": "cpu=$(top -bn1 | grep '%Cpu' | awk '{printf \"%.0f\", $2 + $4}'); mem=$(free -m | awk '/^Mem:/ {printf \"%.1f\", $3/1024}'); echo '{\"text\": \"'[$cpu'%  ]'[$mem' GB]\", \"tooltip\": \"CPU: '$cpu'%\\nMemory: '$mem' GB (used)\"}'",
+    "on-click": "kitty htop",
+    "escape": true
+  }
+}
