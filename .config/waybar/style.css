@@ -1,0 +1,106 @@
+/* =========================
+   Waybar - unified + same hover everywhere
+   ========================= */
+
+@define-color base    #1e1e2e;
+@define-color fg      #ffffff;
+@define-color accent  #7aa2f7;
+@define-color border  #ffffff;
+
+/* Hover look (jedno źródło prawdy) */
+@define-color hover_bg     rgba(122, 162, 247, 0.12);
+@define-color hover_border rgba(255, 255, 255, 0.45);
+@define-color hover_fg     #7aa2f7;
+
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-height: 0;
+
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 18px;
+  color: @fg;
+}
+
+window#waybar {
+  background-color: alpha(@base, 0.40);
+}
+
+/* =============
+   Shared “chip” styling
+   ============= */
+
+/* Wszystko, co ma wyglądać jak kafelek */
+#clock,
+#wireplumber,
+#network,
+#battery,
+#tray,
+#bluetooth,
+#custom-spotify,
+#custom-cpumem,
+#custom-power,
+#workspaces button {
+  padding: 0 10px;
+  margin: 0 4px;
+
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0); /* nie skacze layout */
+  border-radius: 6px;
+}
+
+/* Jeden hover dla WSZYSTKIEGO */
+#clock:hover,
+#wireplumber:hover,
+#network:hover,
+#battery:hover,
+#tray:hover,
+#bluetooth:hover,
+#custom-spotify:hover,
+#custom-cpumem:hover,
+#custom-power:hover,
+#workspaces button:hover {
+  background-color: @hover_bg;
+  border-color: @hover_border;
+  color: @hover_fg;
+}
+
+/* =============
+   Special cases
+   ============= */
+
+/* Clock: wyróżniony stale, ale hover dalej identyczny (bo o to chodziło) */
+#clock {
+  font-family: "Fira Sans", "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: @accent;
+  padding: 0 14px;
+}
+
+/* Workspaces */
+#workspaces button {
+  margin: 0 3px;
+}
+
+/* Active workspace: dalej aktywny, ale hover nie robi z niego innej planety */
+#workspaces button.active {
+  background-color: @accent;
+  color: #000000;
+}
+
+/* Active + hover: trzyma aktywny stan, tylko delikatnie podbija ramkę/tło */
+#workspaces button.active:hover {
+  background-color: @accent;        /* nie zmieniamy aktywnego tła */
+  border-color: @hover_border;      /* ale hover “feedback” zostaje */
+  color: #000000;                   /* zachowaj czytelność */
+}
+
+/* Power: bardziej “przycisk” */
+#custom-power {
+  font-size: 14px;
+  padding: 2px 8px;
+  margin-right: 6px;
+}
