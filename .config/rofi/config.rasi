@@ -1,0 +1,21 @@
+configuration {
+    modi: "drun,run,window,ssh";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    font: "JetBrainsMono Nerd Font 16";
+    display-drun: "  Search:";
+    display-run: "  Run:";
+    display-window: "  Window:";
+    display-ssh: "  SSH:";
+    sidebar-mode: true;
+    location: 0;              // center screen
+    fixed-num-lines: false;   // auto-wysokość
+    lines: 15;                // max 15 linii
+    padding: 6;               // trochę ciaśniej niż 10
+    terminal: "kitty";
+    matching: "fuzzy";
+    sort: true;
+    normalize-match: true;
+    cycle: true;
+}
+@theme "~/.config/rofi/themes/midnight.rasi"
